@@ -1,0 +1,29 @@
+{
+  "name": "react-18-migration-demo",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react/**",
+      "**/react-dom",
+      "**/react-dom/**"
+    ]
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "turbo": "latest"
+  },
+  "packageManager": "yarn@1.22.17"
+}

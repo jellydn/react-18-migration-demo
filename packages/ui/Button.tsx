@@ -1,5 +1,5 @@
 import * as React from "react";
 
-export const Button = () => {
-  return <button>Hello React</button>;
+export const Button = ({ title = "Hello React" }: { title?: string }) => {
+  return <button>{title}</button>;
 };

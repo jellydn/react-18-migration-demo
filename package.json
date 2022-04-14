@@ -20,7 +20,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "predeploy": "cd apps/react-18 && yarn run build",
+    "predeploy": "cd apps/react-18 && yarn run build --base=/react-18-migration-demo/",
     "deploy": "gh-pages -d apps/react-18/dist",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

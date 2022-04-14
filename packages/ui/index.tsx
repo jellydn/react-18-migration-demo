@@ -1,4 +1,3 @@
-import * as React from "react";
-
 export * from "./Button";
 export * from "./Counter";
+export * from "./BatchingExample";

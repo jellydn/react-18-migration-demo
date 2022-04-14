@@ -1,12 +1,24 @@
-import * as React from "react";
 import { useState } from "react";
 
-export const Counter = () => {
-  const [count, setCount] = useState(0);
+import logger from "./utils/logger";
+
+type Props = {
+  initCounter?: number;
+  step?: number;
+};
+
+export const Counter = ({ initCounter = 0, step = 1 }: Props) => {
+  const [count, setCount] = useState(initCounter);
+
+  logger.info("Counter - render", { count, step });
   return (
     <p>
-      <button type="button" onClick={() => setCount((counter) => counter + 1)}>
-        count is: {count}
+      Counter{" "}
+      <button
+        type="button"
+        onClick={() => setCount((counter) => counter + step)}
+      >
+        {count}
       </button>
     </p>
   );

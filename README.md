@@ -11,9 +11,15 @@
 yarn install
 ```
 
+## Screenshots
+
+| React 18                                                            | React 17                                                            |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| ![react 18](https://gyazo.com/851035d337ed2e9d77b7ff2276e1213d.gif) | ![react 17](https://gyazo.com/c803d205d79b53adafb906c681dc8962.gif) |
+
 ## How to Upgrade to React 18
 
-Run below command and it will [upgrade your apps to React 18](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html)
+Run below command and it will [upgrade your app to React 18](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html)
 
 ```sh
 npx new-web-app@latest react upgrade-react-18

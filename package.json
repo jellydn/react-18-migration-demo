@@ -2,6 +2,7 @@
   "name": "react-18-migration-demo",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://jellydn.github.io/react-18-migration-demo",
   "workspaces": {
     "packages": [
       "apps/*",
@@ -19,12 +20,15 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "predeploy": "cd apps/react-18 && yarn run build",
+    "deploy": "gh-pages -d apps/react-18/dist",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "gh-pages": "^3.2.3",
     "husky": ">=7.0.4",
     "lint-staged": ">=12.3.7",
     "prettier": "^2.6.2",

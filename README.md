@@ -53,6 +53,12 @@ yarn dev
 yarn test
 ```
 
+## Deployment
+
+```sh
+yarn build --filter=react-18 --filter=react-experimental
+```
+
 ## Author
 
 👤 **Dung Huynh**

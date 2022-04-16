@@ -9,6 +9,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
+    "@faker-js/faker": "^6.1.2",
     "react": "experimental",
     "react-dom": "experimental",
     "react-fetch": "experimental"

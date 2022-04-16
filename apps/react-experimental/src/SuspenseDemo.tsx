@@ -1,62 +1,62 @@
 import logger from "@jellydn/ui/utils/logger";
+import { Suspense, useId, useState } from "react";
 // @ts-expect-error no types yet
 import { fetch } from "react-fetch";
+
+import { UserProfile, UserResponse } from "./UserProfile";
+import { fetchProfileData } from "./fakeApi";
 
 type Props = {
   userId: number;
 };
-
-export interface UserResponse {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: Address;
-  phone: string;
-  website: string;
-  company: Company;
-}
-
-export interface Address {
-  street: string;
-  suite: string;
-  city: string;
-  zipcode: string;
-  geo: Geo;
-}
-
-export interface Geo {
-  lat: string;
-  lng: string;
-}
-
-export interface Company {
-  name: string;
-  catchPhrase: string;
-  bs: string;
-}
-
-const UserProfile = ({ user }: { user: UserResponse }) => {
-  return (
-    <div>
-      <h2>User Profile</h2>
-      <p>
-        <strong>Name:</strong> {user.name}
-      </p>
-      <p>
-        <strong>Username:</strong> {user.username}
-      </p>
-      <p>
-        <strong>Email:</strong> {user.email}
-      </p>
-    </div>
-  );
+const FetchingUseProfile = ({ userId }: Props) => {
+  logger.info("FetchingUseProfile", userId);
+  const user = fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+  return <UserProfile user={user.json()} />;
 };
 
-const SuspenseDemo = ({ userId }: Props) => {
-  const user = fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
-  logger.info("SuspenseDemo - render ", user.json());
-  return <UserProfile user={user.json()} />;
+const { user } = fetchProfileData(99);
+const FetchingUserWithDelay = () => {
+  logger.info("FetchingUserWithDelay");
+  const userData = user.read();
+  return <UserProfile user={userData as UserResponse} />;
+};
+
+const SuspenseDemo = () => {
+  const id = useId();
+  const [isEnable, setIsEnable] = useState(false);
+  const [userId, setUserId] = useState(1);
+
+  const handleClick = (checked: boolean) => {
+    setIsEnable(checked);
+    if (checked) {
+      // set random userId
+      setUserId(Math.floor(Math.random() * 5) + 1);
+    }
+  };
+
+  return (
+    <div>
+      <label htmlFor={id}>Fetching users?</label>
+      <input
+        id={id}
+        type="checkbox"
+        name="isEnable"
+        checked={isEnable}
+        onChange={(evt) => handleClick(evt.currentTarget.checked)}
+      />
+      {isEnable && (
+        <>
+          <FetchingUseProfile userId={userId} />
+          <FetchingUseProfile userId={10} />
+        </>
+      )}
+
+      <Suspense fallback="loading data in 3s...">
+        <FetchingUserWithDelay />
+      </Suspense>
+    </div>
+  );
 };
 
 export default SuspenseDemo;

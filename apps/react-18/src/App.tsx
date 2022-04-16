@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h3>Stable version</h3>
         <img src={logo} alt="logo" />
         <BatchingExample counter={18} />
 

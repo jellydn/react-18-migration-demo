@@ -27,11 +27,11 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
-    "gh-pages": "^3.2.3",
-    "husky": ">=7.0.4",
+    "@trivago/prettier-plugin-sort-imports": "3.2.0",
+    "gh-pages": "3.2.3",
+    "husky": "7.0.4",
     "lint-staged": "12.3.8",
-    "prettier": "^2.6.2",
+    "prettier": "2.6.2",
     "turbo": "latest"
   },
   "packageManager": "yarn@1.22.18",

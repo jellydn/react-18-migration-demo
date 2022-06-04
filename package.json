@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "3.2.0",
-    "gh-pages": "3.2.3",
+    "gh-pages": "4.0.0",
     "husky": "7.0.4",
     "lint-staged": "12.4.1",
     "prettier": "2.6.2",

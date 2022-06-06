@@ -4,6 +4,7 @@
 [![Twitter: jellydn](https://img.shields.io/twitter/follow/jellydn.svg?style=social)](https://twitter.com/jellydn)
 
 > React 18 migration demo
+> [![Master React 18 in 10 minutes](https://img.youtube.com/vi/enYXn3AYhYQ/0.jpg)](https://www.youtube.com/watch?v=enYXn3AYhYQ)
 
 ## Install
 

@@ -34,7 +34,7 @@
     "prettier": "2.6.2",
     "turbo": "latest"
   },
-  "packageManager": "yarn@1.22.18",
+  "packageManager": "yarn@1.22.19",
   "lint-staged": {
     "*.{ts,tsx,md}": "prettier --write"
   },

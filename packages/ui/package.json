@@ -11,7 +11,7 @@
   "devDependencies": {
     "@jellydn/config": "*",
     "@jellydn/tsconfig": "*",
-    "@types/react": "18.0.5",
+    "@types/react": "18.0.15",
     "@types/react-dom": "18.0.0",
     "typescript": "4.7.3"
   },

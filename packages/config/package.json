@@ -9,7 +9,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
-    "eslint": "8.14.0",
+    "eslint": "8.24.0",
     "eslint-config-productsway": "0.1.14"
   }
 }

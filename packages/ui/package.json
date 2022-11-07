@@ -11,9 +11,9 @@
   "devDependencies": {
     "@jellydn/config": "*",
     "@jellydn/tsconfig": "*",
-    "@types/react": "18.0.5",
-    "@types/react-dom": "18.0.0",
-    "typescript": "4.7.3"
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.8",
+    "typescript": "4.8.4"
   },
   "dependencies": {
     "consola": "^2.15.3"
